@@ -1,0 +1,245 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\usepackage{mathtools}
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+%SetFonts
+
+%SetFonts
+
+
+\title{Bi-Directional Training in Interference Network}
+\author{Shao-Han Chen}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+1. Optimization Problem
+\begin{align*}
+\min_{v_{i} , g_{i}} \displaystyle\sum_{i} MSE^{(c)}_{i}+MSE^{(c)}_{i}
+\end{align*}
+
+2. The received signal vector at k-th receiver
+\begin{align*}
+\textbf{y}_{k} &= \textbf{H}_{kk}
+			(\textbf{v}^{(c)}_{k}x
+			+\textbf{v}^{(p)}_{k}x^{(p)}_{k})
+			+\displaystyle\sum_{j \neq k}\textbf{H}_{kj}(\textbf{v}^{(c)}_{j}x+\textbf{v}^{(p)}_{j}x^{(p)}_{j})
+			+\textbf{n}_{k}
+\end{align*}
+
+3. SINR Derivation
+\begin{align*}
+s^{(c)}_{k} = \textbf{g}^{H(c)}_{k}
+		(\displaystyle\sum_{i}
+		\textbf{H}_{ki} 
+		\textbf{v}^{(c)}_{i}x)
+\end{align*}
+
+\begin{align*}
+s^{(p)}_{k} = \textbf{g}^{H(p)}_{k}
+		(\textbf{H}_{kk} 
+		\textbf{v}^{(p)}_{k}x^{(p)}_{k})
+\end{align*}
+
+\begin{align*}
+n^{(c)}_{k} = \textbf{g}^{H(c)}_{k}
+		(\displaystyle\sum_{i}
+		\textbf{H}_{ki} 
+		\textbf{v}^{(p)}_{i}x^{(p)}_{i}
+		+\textbf{n}_{k})
+\end{align*}
+
+\begin{align*}
+n^{(p)}_{k} = \textbf{g}^{H(p)}_{k}
+		(\displaystyle\sum_{i}
+		\textbf{H}_{ki} 
+		\textbf{v}^{(c)}_{i}x
+		+\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(p)}_{j}x^{(p)}_{j}
+		+\textbf{n}_{k})
+\end{align*}
+
+\begin{align*}
+\frac	{	|s^{(c)}_{k}|^2	}{	|n^{(c)}_{k}|^2	} = 
+\frac {|\textbf{g}^{H(c)}_{k}
+		\displaystyle\sum_{i}
+		\textbf{H}_{ki} 
+		\textbf{v}^{(c)}_{i}|^2	
+	} 
+	{	|\textbf{g}^{H(c)}_{k}
+		\displaystyle\sum_{i}
+		\textbf{H}_{ki} 
+		\textbf{v}^{(p)}_{i}|^2
+		+|\textbf{g}^{H(c)}_{k}
+		\textbf{R}_{k}
+		\textbf{g}^{(c)}_{k}|
+	}
+\end{align*}
+
+\begin{align*}
+\frac	{	|s^{(p)}_{k}|^2	}{	|n^{(p)}_{k}|^2	} = 
+\frac {|\textbf{g}^{H(p)}_{k}
+		\textbf{H}_{kk} 
+		\textbf{v}^{(p)}_{k}|^2	
+	} 
+	{	|\textbf{g}^{H(p)}_{k}
+		\displaystyle\sum_{i}
+		\textbf{H}_{ki} 
+		\textbf{v}^{(c)}_{i}|^2
+		+|\textbf{g}^{H(p)}_{k}
+		\displaystyle\sum_{j \neq k}
+		\textbf{H}_{kj} 
+		\textbf{v}^{(p)}_{j}|^2
+		+|\textbf{g}^{H(p)}_{k}
+		\textbf{R}_{k}
+		\textbf{g}^{(p)}_{k}|
+	}
+\end{align*}
+
+4. Bi-Directional Training - Wiener Filter 
+\begin{align*}
+Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
+\end{align*}
+
+\begin{align*}
+\textbf{g}^{H(c)}_{k} = &\displaystyle\sum_{i}	\textbf{v}^{H(c)}_{i}	\textbf{H}^{H}_{ki} 
+[
+\textbf{H}_{kk}	\textbf{v}^{(c)}_{k}	\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
++\textbf{H}_{kk}	\textbf{v}^{(p)}_{k}	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk}	\\
+&+(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(p)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{v}^{H(p)}_{j}\textbf{H}^{H}_{kj})	\\
+&+\textbf{H}_{kk}	\textbf{v}^{(c)}_{k}
+(\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
+\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
++\sigma^2	\textbf{I}
+]^{-1}	
+\end{align*}
+
+\begin{align*}
+\textbf{g}^{H(p)}_{k} = &	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk} 
+[
+\textbf{H}_{kk}	\textbf{v}^{(c)}_{k}	\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
++\textbf{H}_{kk}	\textbf{v}^{(p)}_{k}	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk}	\\
+&+(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(p)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{v}^{H(p)}_{j}\textbf{H}^{H}_{kj})	\\
+&+\textbf{H}_{kk}	\textbf{v}^{(c)}_{k}
+(\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
+\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
++\sigma^2	\textbf{I}
+]^{-1}	
+\end{align*}
+
+\begin{align*}
+Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
+\end{align*}
+
+\begin{align*}
+\textbf{Z}_{ab}=\textbf{H}^{T}_{ba}
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{H(c)}_{k} = &\displaystyle\sum_{i}	\textbf{g}^{H(c)}_{i}	\textbf{Z}^{H}_{ki} 
+[
+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
++\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
+&+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
+&+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
+\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
++\sigma^2	\textbf{I}
+]^{-1}	
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{H(p)}_{k} = &\textbf{v}^{H(p)}_{k}	\textbf{Z}^{H}_{kk} 
+[
+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
++\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
+&+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
+&+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
+\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
++\sigma^2	\textbf{I}
+]^{-1}	
+\end{align*}
+
+5. Bi-Directional Training - Least Mean Square Algorithm
+
+\begin{align*}
+Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
+\end{align*}
+
+\begin{align*}
+\textbf{g}^{(c)}_{k}(n+1)= \textbf{g}^{(c)}_{k}(n)+ \mu \textbf y_k(n) [x(n)- \textbf{g}^{H(c)}_{k}(n) \textbf y_k(n)]^*
+\end{align*}
+
+\begin{align*}
+\textbf{g}^{(p)}_{k}(n+1)= \textbf{g}^{(p)}_{k}(n)+ \mu \textbf y_k(n) [x_k^{(p)}(n)- \textbf{g}^{H(p)}_{k}(n) \textbf y_k(n)]^*
+\end{align*}
+
+\begin{align*}
+Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)(without\ cooperation)
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{(c)}_{k}(n+1)= \textbf{v}^{(c)}_{k}(n)+ \mu \textbf y_k(n) [x(n)- \textbf{v}^{H(c)}_{k}(n) \textbf y_k(n)]^*
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{(p)}_{k}(n+1)= \textbf{v}^{(p)}_{k}(n)+ \mu \textbf y_k(n) [x_k^{(p)}(n)- \textbf{v}^{H(p)}_{k}(n) \textbf y_k(n)]^*
+\end{align*}
+
+\begin{align*}
+Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)(with\ cooperation)
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{(c)}_{k}(n+1)= \textbf{v}^{(c)}_{k}(n)+ \mu \textbf y_k(n) [x(n)- \frac {\displaystyle\sum_{i}\textbf{v}^{H(c)}_{i}(n) \textbf y_i(n)}	{Cardinality\ of \ i}]^*
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{(p)}_{k}(n+1)= \textbf{v}^{(p)}_{k}(n)+ \mu \textbf y_k(n) [x_k^{(p)}(n)- \textbf{v}^{H(p)}_{k}(n) \textbf y_k(n)]^*
+\end{align*}
+
+6. Numerical Simulation(2 Users, 2X2 MIMO Channel)
+
+
+\begin{align*}
+Rayleigh\ Fading\ Channel
+\end{align*}
+
+\begin{align*}
+\ Cross\ Channel\ Gain = 0.8*Direct\ Channel\ Gain
+\end{align*}
+
+\begin{align*}
+SNR = \frac {1}{\sigma^2} = 10^3=30dB
+\end{align*}
+
+
+ 
+
+
+\end{document}  
