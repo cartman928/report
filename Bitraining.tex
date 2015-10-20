@@ -232,21 +232,42 @@ Rayleigh\ Fading\ Channel
 \end{align*}
 
 \begin{align*}
-\ Cross\ Channel\ Gain = 0.8*Direct\ Channel\ Gain
+\ Cross\ Channel\ Gain = 1*Direct\ Channel\ Gain
 \end{align*}
 
 \begin{align*}
 SNR = \frac {1}{\sigma^2} = 10^3=30dB
 \end{align*}
 
+\begin{align*}
+Observation1: &If\ the\ training\ length\ is\ long\ enough,\ each\ LMS\ filter\ (\textbf{v}^{(c)}_{k},\textbf{v}^{(p)}_{k},\textbf{g}^{(c)}_{k},\textbf{g}^{(p)}_{k},)\\
+&will\ converge\ to\ Wiener\ filter
+\end{align*}
+
+\begin{align*}
+Observation2:\ Use\ Wiener\ filters,\ and\ only\ send\ common\ messages.\ Sum\ rate\ C\ =\ 19.6\ bit/channel
+\end{align*}
+
+\begin{align*}
+Observation3:\ Use\ Wiener\ filters,\ and\ only\ send\ private\ messages.\ Sum\ rate\ C\ =\ 4.8\ bit/channel
+\end{align*}
+
+\begin{align*}
+Observation4:\ Use\ Wiener\ filters,\ and\  send\ both\ messages.\ Sum\ rate\ C\ =\ 2.84\ bit/channel
+\end{align*}
+
+\begin{align*}
+Observation5:\ Under\ the\ cooperation\ scheme,\ transmitters\ don't\ converge\ to\ Wiener\ filters 
+\end{align*}
 
 
 
-\begin{figure}
+\begin{figure}[bp!]
     \centering
-    \includegraphics{01}
+    \includegraphics[width=150mm]{01}
     \caption{Insert caption}
 \end{figure} 
+
 
 
  

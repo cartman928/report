@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 OCT 2015 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 OCT 2015 20:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -303,34 +303,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+
+Overfull \hbox (22.67589pt too wide) in paragraph at lines 245--245
+[] 
+ []
+
+
+Overfull \hbox (85.21506pt too wide) in paragraph at lines 249--249
+[] 
+ []
+
+
+Overfull \hbox (73.65231pt too wide) in paragraph at lines 253--253
+[] 
+ []
+
+
+Overfull \hbox (39.55565pt too wide) in paragraph at lines 257--257
+[] 
+ []
+
+
+Overfull \hbox (36.44337pt too wide) in paragraph at lines 261--261
+[] 
+ []
+
 Package epstopdf Info: Source file: <01.eps>
 (epstopdf)                    date: 2015-10-19 18:35:18
 (epstopdf)                    size: 71230 bytes
 (epstopdf)             Output file: <01-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-19 18:33:43
-(epstopdf)                    size: 5630229 bytes
+(epstopdf)                    date: 2015-10-19 18:35:32
+(epstopdf)                    size: 24852 bytes
 (epstopdf)             Command: <repstopdf --outfile=01-eps-converted-to.pdf 01
 .eps>
-(epstopdf)             \includegraphics on input line 247.
-runsystem(repstopdf --outfile=01-eps-converted-to.pdf 01.eps)...executed safely
- (allowed).
-
-Package epstopdf Info: Result file: <01-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-19 18:35:32
-(epstopdf)                    size: 24852 bytes.
-
+(epstopdf)             \includegraphics on input line 267.
+Package epstopdf Info: Output file is already uptodate.
 <01-eps-converted-to.pdf, id=23, 562.1pt x 421.575pt>
 File: 01-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 01-eps-converted-to.pdf>
-Package pdftex.def Info: 01-eps-converted-to.pdf used on input line 247.
-(pdftex.def)             Requested size: 562.09863pt x 421.57396pt.
-
-Overfull \hbox (132.09401pt too wide) in paragraph at lines 247--248
- [][] 
- []
-
-[4] [5 <./01-eps-converted-to.pdf>] (./Bitraining.aux) ) 
+Package pdftex.def Info: 01-eps-converted-to.pdf used on input line 267.
+(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+ [4] [5 <./01-eps-converted-to.pdf>]
+(./Bitraining.aux) ) 
 Here is how much of TeX's memory you used:
  3411 strings out of 493089
  48246 string characters out of 6134842
@@ -338,20 +353,20 @@ Here is how much of TeX's memory you used:
  6836 multiletter control sequences out of 15000+600000
  11061 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,26p,299b,211s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Bitraining.pdf (5 pages, 142063 bytes).
+ 37i,11n,26p,299b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+>
+Output written on Bitraining.pdf (5 pages, 144997 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream
