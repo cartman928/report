@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 OCT 2015 23:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2015 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -329,15 +329,20 @@ Overfull \hbox (36.44337pt too wide) in paragraph at lines 261--261
  []
 
 Package epstopdf Info: Source file: <01.eps>
-(epstopdf)                    date: 2015-10-19 18:35:18
-(epstopdf)                    size: 71230 bytes
+(epstopdf)                    date: 2015-10-22 12:25:24
+(epstopdf)                    size: 68496 bytes
 (epstopdf)             Output file: <01-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-19 18:35:32
-(epstopdf)                    size: 24852 bytes
+(epstopdf)                    date: 2015-10-22 12:23:08
+(epstopdf)                    size: 20224 bytes
 (epstopdf)             Command: <repstopdf --outfile=01-eps-converted-to.pdf 01
 .eps>
 (epstopdf)             \includegraphics on input line 271.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=01-eps-converted-to.pdf 01.eps)...executed safely
+ (allowed).
+
+Package epstopdf Info: Result file: <01-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-10-22 12:26:00
+(epstopdf)                    size: 21140 bytes.
 <01-eps-converted-to.pdf, id=23, 562.1pt x 421.575pt>
 File: 01-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -366,10 +371,10 @@ mr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 >
-Output written on Bitraining.pdf (5 pages, 144818 bytes).
+Output written on Bitraining.pdf (5 pages, 141309 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
