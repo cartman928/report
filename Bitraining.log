@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2015 12:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 OCT 2015 01:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -329,11 +329,11 @@ Overfull \hbox (36.44337pt too wide) in paragraph at lines 261--261
  []
 
 Package epstopdf Info: Source file: <01.eps>
-(epstopdf)                    date: 2015-10-22 12:25:24
-(epstopdf)                    size: 68496 bytes
+(epstopdf)                    date: 2015-10-23 01:52:42
+(epstopdf)                    size: 73400 bytes
 (epstopdf)             Output file: <01-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-22 12:23:08
-(epstopdf)                    size: 20224 bytes
+(epstopdf)                    date: 2015-10-22 12:26:00
+(epstopdf)                    size: 21140 bytes
 (epstopdf)             Command: <repstopdf --outfile=01-eps-converted-to.pdf 01
 .eps>
 (epstopdf)             \includegraphics on input line 271.
@@ -341,14 +341,14 @@ runsystem(repstopdf --outfile=01-eps-converted-to.pdf 01.eps)...executed safely
  (allowed).
 
 Package epstopdf Info: Result file: <01-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-22 12:26:00
-(epstopdf)                    size: 21140 bytes.
-<01-eps-converted-to.pdf, id=23, 562.1pt x 421.575pt>
+(epstopdf)                    date: 2015-10-23 01:53:07
+(epstopdf)                    size: 21817 bytes.
+<01-eps-converted-to.pdf, id=23, 807.015pt x 584.1825pt>
 File: 01-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 01-eps-converted-to.pdf>
 Package pdftex.def Info: 01-eps-converted-to.pdf used on input line 271.
-(pdftex.def)             Requested size: 426.79134pt x 320.09155pt.
+(pdftex.def)             Requested size: 426.79134pt x 308.9467pt.
  [4] [5 <./01-eps-converted-to.pdf>]
 (./Bitraining.aux) ) 
 Here is how much of TeX's memory you used:
@@ -371,7 +371,7 @@ mr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 >
-Output written on Bitraining.pdf (5 pages, 141309 bytes).
+Output written on Bitraining.pdf (5 pages, 142186 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
