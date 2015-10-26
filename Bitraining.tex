@@ -153,20 +153,18 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 \end{align*}
 
 \begin{align*}
-\textbf{v}^{H(c)}_{k} = &\displaystyle\sum_{i}	\textbf{g}^{H(c)}_{i}	\textbf{Z}^{H}_{ki} 
-[
-\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
-+\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
-&+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
-(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
-+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j})
-(\displaystyle\sum_{j \neq k}\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
-&+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}
-(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
-+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
-\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
-+\sigma^2	\textbf{I}
-]^{-1}	
+\textbf{V}^{H(c)} =  &\textbf{g}^{H(c)}		\textbf{[Z]}^{H} 
+\left\{ 
+\textbf{[Z]}	\textbf{g}^{(c)}	\textbf{g}^{H(c)}		\textbf{[Z]}^{H}
++\textbf{[Z]}
+\begin{bmatrix}
+       \textbf{g}^{(p)}_{1}	\textbf{g}^{H(p)}_{1} &  &   \textbf{O}      \\[0.3em]
+        & \ddots       & \\[0.3em]
+           \textbf{O}        & & \textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}
+     \end{bmatrix}
+    \textbf{[Z]}^{H}
+    +\sigma^2	\textbf{I}
+\right\}^{-1}	
 \end{align*}
 
 \begin{align*}
@@ -217,7 +215,7 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 \end{align*}
 
 \begin{align*}
-\textbf{v}^{(c)}_{k}(n+1)= \textbf{v}^{(c)}_{k}(n)+ \mu \textbf y_k(n) [x(n)- \frac {\displaystyle\sum_{i}\textbf{v}^{H(c)}_{i}(n) \textbf y_i(n)}	{Cardinality\ of \ i}]^*
+\textbf{V}^{(c)}(n+1)= \textbf{V}^{(c)}(n)+ \mu \textbf Y(n) [x(n)- \textbf{V}^{H(c)}(n) \textbf Y(n)	]^*
 \end{align*}
 
 \begin{align*}
