@@ -105,7 +105,7 @@ n^{(p)}_{k} = \textbf{g}^{H(p)}_{k}
 	}
 \end{align*}
 
-4. Bi-Directional Training - Wiener Filter 
+4. Max-SINR Algorithm[Gomadam,2011]
 \begin{align*}
 Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
 \end{align*}
@@ -152,6 +152,32 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 \textbf{Z}_{ab}=\textbf{H}^{T}_{ba}
 \end{align*}
 
+
+\begin{align*}
+without \ cooperation
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{H(c)}_{k} = &\displaystyle\sum_{i}	\textbf{g}^{H(c)}_{i}	\textbf{Z}^{H}_{ki} 
+[
+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
++\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
+&+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j})
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
+&+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}
+(\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
+\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
++\sigma^2	\textbf{I}
+]^{-1}	
+\end{align*}
+
+\begin{align*}
+with \ cooperation
+\end{align*}
+
 \begin{align*}
 \textbf{V}^{H(c)} =  &\textbf{g}^{H(c)}		\textbf{[Z]}^{H} 
 \left\{ 
@@ -184,7 +210,7 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 ]^{-1}	
 \end{align*}
 
-5. Bi-Directional Training - Least Mean Square Algorithm
+5. Bi-Directional Training with LMS Algorithm[Shi,2014]
 
 \begin{align*}
 Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
@@ -273,6 +299,36 @@ Observation5:\ Under\ the\ cooperation\ scheme,\ C=3.15\ bit/channel
 \begin{figure}[bp!]
     \centering
     \centerline{\includegraphics[width=220mm]{1USER_4X4MIMO}}
+    \caption{Insert caption}
+\end{figure} 
+
+\begin{figure}[bp!]
+    \centering
+    \centerline{\includegraphics[width=220mm]{LMS1}}
+    \caption{Insert caption}
+\end{figure} 
+
+\begin{figure}[bp!]
+    \centering
+    \centerline{\includegraphics[width=220mm]{LMS2}}
+    \caption{Insert caption}
+\end{figure} 
+
+\begin{figure}[bp!]
+    \centering
+    \centerline{\includegraphics[width=220mm]{LMS3}}
+    \caption{Insert caption}
+\end{figure} 
+
+\begin{figure}[bp!]
+    \centering
+    \centerline{\includegraphics[width=220mm]{LMS4}}
+    \caption{Insert caption}
+\end{figure} 
+
+\begin{figure}[bp!]
+    \centering
+    \centerline{\includegraphics[width=220mm]{LS1}}
     \caption{Insert caption}
 \end{figure} 
 
