@@ -70,13 +70,13 @@ n^{(p)}_{k} = \textbf{g}^{H(p)}_{k}
 
 \begin{align*}
 \frac	{	|s^{(c)}_{k}|^2	}{	|n^{(c)}_{k}|^2	} = 
-\frac {|\textbf{g}^{H(c)}_{k}
+\frac {	|\textbf{g}^{H(c)}_{k}
 		\displaystyle\sum_{i}
 		\textbf{H}_{ki} 
 		\textbf{v}^{(c)}_{i}|^2	
 	} 
-	{	|\textbf{g}^{H(c)}_{k}
-		\displaystyle\sum_{i}
+	{	\displaystyle\sum_{i}
+		|\textbf{g}^{H(c)}_{k}
 		\textbf{H}_{ki} 
 		\textbf{v}^{(p)}_{i}|^2
 		+|\textbf{g}^{H(c)}_{k}
@@ -95,8 +95,8 @@ n^{(p)}_{k} = \textbf{g}^{H(p)}_{k}
 		\displaystyle\sum_{i}
 		\textbf{H}_{ki} 
 		\textbf{v}^{(c)}_{i}|^2
-		+|\textbf{g}^{H(p)}_{k}
-		\displaystyle\sum_{j \neq k}
+		+\displaystyle\sum_{j \neq k}
+		|\textbf{g}^{H(p)}_{k}
 		\textbf{H}_{kj} 
 		\textbf{v}^{(p)}_{j}|^2
 		+|\textbf{g}^{H(p)}_{k}
@@ -111,37 +111,35 @@ Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
 \end{align*}
 
 \begin{align*}
-\textbf{g}^{H(c)}_{k} = &\displaystyle\sum_{i}	\textbf{v}^{H(c)}_{i}	\textbf{H}^{H}_{ki} 
-[
+\textbf{g}^{(c)}_{k} = 
+&\bigg[
 \textbf{H}_{kk}	\textbf{v}^{(c)}_{k}	\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
 +\textbf{H}_{kk}	\textbf{v}^{(p)}_{k}	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk}	\\
 &+(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
 (\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
-+(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(p)}_{j})
-(\displaystyle\sum_{j \neq k}\textbf{v}^{H(p)}_{j}\textbf{H}^{H}_{kj})	\\
++(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(p)}_{j} \textbf{v}^{H(p)}_{j}\textbf{H}^{H}_{kj})	\\
 &+\textbf{H}_{kk}	\textbf{v}^{(c)}_{k}
 (\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
 +(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
 \textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
 +\sigma^2	\textbf{I}
-]^{-1}	
+\bigg]^{-1}	 	(\displaystyle\sum_{i}	\textbf{H}_{ki} 	\textbf{v}^{(c)}_{i})	
 \end{align*}
 
 \begin{align*}
-\textbf{g}^{H(p)}_{k} = &	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk} 
-[
+\textbf{g}^{(p)}_{k} = 	
+&\bigg[
 \textbf{H}_{kk}	\textbf{v}^{(c)}_{k}	\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
 +\textbf{H}_{kk}	\textbf{v}^{(p)}_{k}	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk}	\\
 &+(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
 (\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
-+(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(p)}_{j})
-(\displaystyle\sum_{j \neq k}\textbf{v}^{H(p)}_{j}\textbf{H}^{H}_{kj})	\\
++(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(p)}_{j} \textbf{v}^{H(p)}_{j}\textbf{H}^{H}_{kj})	\\
 &+\textbf{H}_{kk}	\textbf{v}^{(c)}_{k}
 (\displaystyle\sum_{j \neq k}\textbf{v}^{H(c)}_{j}\textbf{H}^{H}_{kj})
 +(\displaystyle\sum_{j \neq k}\textbf{H}_{kj}\textbf{v}^{(c)}_{j})
 \textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
 +\sigma^2	\textbf{I}
-]^{-1}	
+\bigg]^{-1}	 (\textbf{H}_{kk} 	\textbf{v}^{(p)}_{k})
 \end{align*}
 
 \begin{align*}
@@ -158,29 +156,33 @@ without \ cooperation
 \end{align*}
 
 \begin{align*}
-\textbf{v}^{H(c)}_{k} = &\displaystyle\sum_{i}	\textbf{g}^{H(c)}_{i}	\textbf{Z}^{H}_{ki} 
-[
+\textbf{v}^{(c)}_{k} = 
+&\bigg[
 \textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
 +\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
 &+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
 (\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
-+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j})
-(\displaystyle\sum_{j \neq k}\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j}	\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
 &+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}
 (\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
 +(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
 \textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
 +\sigma^2	\textbf{I}
-]^{-1}	
+\bigg]
+^{-1}	 (	\displaystyle\sum_{i}   \textbf{Z}_{ki} 	\textbf{g}^{(c)}_{i}	)
 \end{align*}
+
+
+
+
 
 \begin{align*}
 with \ cooperation
 \end{align*}
 
 \begin{align*}
-\textbf{V}^{H(c)} =  &\textbf{g}^{H(c)}		\textbf{[Z]}^{H} 
-\left\{ 
+\textbf{V}^{(c)} =  		
+&\left\{ 
 \textbf{[Z]}	\textbf{g}^{(c)}	\textbf{g}^{H(c)}		\textbf{[Z]}^{H}
 +\textbf{[Z]}
 \begin{bmatrix}
@@ -190,24 +192,24 @@ with \ cooperation
      \end{bmatrix}
     \textbf{[Z]}^{H}
     +\sigma^2	\textbf{I}
-\right\}^{-1}	
+\right\}
+^{-1} ( \textbf{[Z]}  \textbf{g}^{(c)}	)	
 \end{align*}
 
 \begin{align*}
-\textbf{v}^{H(p)}_{k} = &\textbf{v}^{H(p)}_{k}	\textbf{Z}^{H}_{kk} 
-[
+\textbf{v}^{(p)}_{k} =	
+ &\bigg[
 \textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
 +\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
 &+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
 (\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
-+(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j})
-(\displaystyle\sum_{j \neq k}\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
++(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(p)}_{j}	\textbf{g}^{H(p)}_{j}\textbf{Z}^{H}_{kj})	\\
 &+\textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}
 (\displaystyle\sum_{j \neq k}\textbf{g}^{H(c)}_{j}\textbf{Z}^{H}_{kj})
 +(\displaystyle\sum_{j \neq k}\textbf{Z}_{kj}\textbf{g}^{(c)}_{j})
 \textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
 +\sigma^2	\textbf{I}
-]^{-1}	
+\bigg]^{-1}	 (\textbf{Z}_{kk}  \textbf{g}^{(p)}_{k})
 \end{align*}
 
 5. Bi-Directional Training with LMS Algorithm[Shi,2014]
@@ -328,11 +330,27 @@ Observation5:\ Under\ the\ cooperation\ scheme,\ C=3.15\ bit/channel
 
 \begin{figure}[bp!]
     \centering
+    \centerline{\includegraphics[width=220mm]{LMS5}}
+    \caption{Insert caption}
+\end{figure} 
+
+\begin{figure}[bp!]
+    \centering
     \centerline{\includegraphics[width=220mm]{LS1}}
     \caption{Insert caption}
 \end{figure} 
 
+\begin{figure}[bp!]
+    \centering
+    \centerline{\includegraphics[width=220mm]{coop}}
+    \caption{Insert caption}
+\end{figure} 
 
+\begin{figure}[bp!]
+    \centering
+    \centerline{\includegraphics[width=220mm]{no_coop}}
+    \caption{Insert caption}
+\end{figure} 
 
  
 
