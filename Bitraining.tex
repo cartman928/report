@@ -23,10 +23,40 @@
 %\section{}
 %\subsection{}
 
+0. System Model(2 Users)
+
+\begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{forward_channel}}
+    \caption{Forward Channel}
+\end{figure} 
+
+\begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{backward_channel}}
+    \caption{Backward Channel}
+\end{figure} 
+
+\newpage
+
+
 1. Optimization Problem
 \begin{align*}
-\min_{v_{i} , g_{i}} \displaystyle\sum_{i} MSE^{(c)}_{i}+MSE^{(p)}_{i}
+\min_{\textbf{v}_{k} ,\textbf{g}_{k}} \displaystyle\sum_{k} MSE^{(c)}_{k}+MSE^{(p)}_{k}
 \end{align*}
+
+\begin{align*}
+MSE^{(c)}_{k} = \mathrm{E}	[	(	x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k}	)(x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k})^{H}	]
+\end{align*}
+
+\begin{align*}
+MSE^{(p)}_{k} = \mathrm{E}	[	(	x^{(p)}_{k}-\textbf{g}^{H(p)}_{k}	\textbf{y}_{k}	)(x^{(p)}_{k}-\textbf{g}^{H(p)}_{k}	\textbf{y}_{k})^{H}	]
+\end{align*}
+
+
+
+
+
 
 2. The received signal vector at k-th receiver
 \begin{align*}
@@ -250,7 +280,92 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 \textbf{v}^{(p)}_{k}(n+1)= \textbf{v}^{(p)}_{k}(n)+ \mu \textbf y_k(n) [x_k^{(p)}(n)- \textbf{v}^{H(p)}_{k}(n) \textbf y_k(n)]^*
 \end{align*}
 
-6. Numerical Simulation(2 Users, 2X2 MIMO Channel)
+
+6. Discussion(2 Users,  MIMO Channel, Only Common Messages)
+
+\begin{align*}
+\textbf{y}_{k} &=	\displaystyle\sum_{i=1}^{2}\textbf{H}_{ki}\textbf{v}^{(c)}_{i}x	+	\textbf{n}_{k}
+\end{align*}
+
+\begin{align*}
+MSE^{(c)}_{k} &= \mathrm{E}	[	(	x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k}	)(x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k})^{H}	] \\
+		       & = \mathrm{E}[x^{2}]	 - \mathrm{E}[x	\textbf{y}_{k}^{H} \textbf{g}^{(c)}_{k}]	
+		       					-  \mathrm{E}[x	\textbf{g}_{k}^{H(c)} \textbf{y}_{k}]
+							+ \mathrm{E}[\textbf{g}_{k}^{H(c)} \textbf{y}_{k}	\textbf{y}_{k}^{H} \textbf{g}^{(c)}_{k}]			\\
+		       & = 1 - \displaystyle\sum_{i=1}^{2}	\textbf{v}^{H(c)}_{i}	\textbf{H}^{H}_{ki}	\textbf{g}^{(c)}_{k}
+		       		- \textbf{g}^{H(c)}_{k}		\displaystyle\sum_{i=1}^{2}	\textbf{H}_{ki}	\textbf{v}^{(c)}_{i}
+				+\textbf{g}^{H(c)}_{k}		(\displaystyle\sum_{i=1}^{2}\textbf{H}_{ki}\textbf{v}^{(c)}_{i})
+									(\displaystyle\sum_{i=1}^{2}\textbf{v}^{H(c)}_{i}\textbf{H}^{H}_{ki})	\textbf{g}^{(c)}_{k}
+				+\sigma^2		\textbf{g}^{H(c)}_{k}	 \textbf{g}^{(c)}_{k}
+\end{align*}
+
+\begin{align*}
+\textbf{v}^{*(c)}_{1}  &= \operatornamewithlimits{argmin}_{\textbf{v}^{(c)}_{1}}	(\displaystyle\sum_{i=1}^{2}	MSE^{(c)}_{k})	\\
+			       &=\bigg[ 2	\textbf{H}^{H}_{11}	\textbf{g}^{(c)}_{1}	\textbf{g}^{H(c)}_{1}		\textbf{H}_{11}
+				   +	2	\textbf{H}^{H}_{21}	\textbf{g}^{(c)}_{2}	\textbf{g}^{H(c)}_{2}		\textbf{H}_{21})
+				   \bigg]^{-1} 
+				   (2	\textbf{H}^{H}_{11}	\textbf{g}^{(c)}_{1}	+	2	\textbf{H}^{H}_{21}	\textbf{g}^{(c)}_{2}	\\
+				   &\ \ \ \ -	\textbf{g}^{H(c)}_{1}	\textbf{H}_{12}	\textbf{v}^{(c)}_{2} 	\textbf{H}^{H}_{11}	\textbf{g}^{(c)}_{1}
+				   -	\textbf{H}^{H}_{11}	\textbf{g}^{(c)}_{1}	\textbf{v}^{H(c)}_{2}	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}
+				   -	\textbf{g}^{H(c)}_{2}	\textbf{H}_{22}	\textbf{v}^{(c)}_{2} 	\textbf{H}^{H}_{21}	\textbf{g}^{(c)}_{2}
+				   -	\textbf{H}^{H}_{21}	\textbf{g}^{(c)}_{2}	\textbf{v}^{H(c)}_{2}	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}
+				   )
+\end{align*}
+
+
+
+\begin{align*}
+\frac{\partial	(\displaystyle\sum_{i=1}^{2}	MSE^{(c)}_{k}) }{\partial \textbf{v}^{(c)}_{2}} = 0
+\end{align*}
+
+\textbf{v}^{*(c)}_{2} 	= &	\bigg[ 2	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}	\textbf{g}^{H(c)}_{1}		\textbf{H}_{12}
+				   +	2	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}	\textbf{g}^{H(c)}_{2}		\textbf{H}_{22})
+				   \bigg]^{-1} 
+				   (2	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}	+	2	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}	\\
+				   &-	\textbf{g}^{H(c)}_{1}	\textbf{H}_{11}	\textbf{v}^{(c)}_{1} 	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}
+				   -	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}	\textbf{v}^{H(c)}_{1}	\textbf{H}^{H}_{11}	\textbf{g}^{(c)}_{1}
+				   -	\textbf{g}^{H(c)}_{2}	\textbf{H}_{21}	\textbf{v}^{(c)}_{1} 	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}
+				   -	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}	\textbf{v}^{H(c)}_{1}	\textbf{H}^{H}_{21}	\textbf{g}^{(c)}_{2}
+				   )
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+7. The Other System Model
+
+ \begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{forward_channel_2}}
+    \caption{Forward Channel}
+\end{figure} 
+
+\begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{backward_channel_2}}
+    \caption{Backward Channel}
+\end{figure} 
+
+8. Optimization Problem
+\begin{align*}
+\min_{\textbf{v}_{k}(p_{i}) ,\textbf{g}_{k}} \displaystyle\sum_{k} MSE^{(p)}_{k}
+\end{align*}
+
+To be continued...
+
+\newpage
+
+9. Numerical Simulation(2 Users, 2X2 MIMO Channel)
 
 
 \begin{align*}
