@@ -281,7 +281,7 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 \end{align*}
 
 
-6. Discussion(2 Users,  MIMO Channel, Only Common Messages)
+6. Special Case(2 Users,  MIMO Channel, Only Common Messages)
 
 \begin{align*}
 \textbf{y}_{k} &=	\displaystyle\sum_{i=1}^{2}\textbf{H}_{ki}\textbf{v}^{(c)}_{i}x	+	\textbf{n}_{k}
@@ -312,17 +312,13 @@ MSE^{(c)}_{k} &= \mathrm{E}	[	(	x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k}	)(x-\text
 				   )
 \end{align*}
 
-
-
 \begin{align*}
-\frac{\partial	(\displaystyle\sum_{i=1}^{2}	MSE^{(c)}_{k}) }{\partial \textbf{v}^{(c)}_{2}} = 0
-\end{align*}
-
-\textbf{v}^{*(c)}_{2} 	= &	\bigg[ 2	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}	\textbf{g}^{H(c)}_{1}		\textbf{H}_{12}
+\textbf{v}^{*(c)}_{2} 	&= \operatornamewithlimits{argmin}_{\textbf{v}^{(c)}_{2}}	(\displaystyle\sum_{i=1}^{2}	MSE^{(c)}_{k})	\\
+				   &= 	\bigg[ 2	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}	\textbf{g}^{H(c)}_{1}		\textbf{H}_{12}
 				   +	2	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}	\textbf{g}^{H(c)}_{2}		\textbf{H}_{22})
 				   \bigg]^{-1} 
 				   (2	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}	+	2	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}	\\
-				   &-	\textbf{g}^{H(c)}_{1}	\textbf{H}_{11}	\textbf{v}^{(c)}_{1} 	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}
+				   &\ \ \ \ -	\textbf{g}^{H(c)}_{1}	\textbf{H}_{11}	\textbf{v}^{(c)}_{1} 	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}
 				   -	\textbf{H}^{H}_{12}	\textbf{g}^{(c)}_{1}	\textbf{v}^{H(c)}_{1}	\textbf{H}^{H}_{11}	\textbf{g}^{(c)}_{1}
 				   -	\textbf{g}^{H(c)}_{2}	\textbf{H}_{21}	\textbf{v}^{(c)}_{1} 	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}
 				   -	\textbf{H}^{H}_{22}	\textbf{g}^{(c)}_{2}	\textbf{v}^{H(c)}_{1}	\textbf{H}^{H}_{21}	\textbf{g}^{(c)}_{2}
