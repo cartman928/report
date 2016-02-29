@@ -8,22 +8,26 @@
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
+\DeclareMathOperator{\Tr}{Tr}
 
 %SetFonts
 
 %SetFonts
-
+\begin{document}
 
 \title{Bi-Directional Training in Interference Network}
 \author{Shao-Han Chen}
 %\date{}							% Activate to display a given date or no date
 
-\begin{document}
+
 \maketitle
 %\section{}
 %\subsection{}
 
-0. System Model(2 Users)
+\section{System Model 1: Private and Common Messages}
+
+Under this model, we want to see how cooperation on transmitter(base station) side will improve the channel capacity. One way we implement the cooperation scheme is to make all transmitters for common messages, instead of working separately, a big cooperative array. That is to say, for the backward training part, we \textbf{minimize the mean square error(MSE) of total received signals together}. However, we found this method is actually \textbf{worse} than the one without cooperation. \textbf{How Doesn't this Work?} This is related the way we \textbf{measure performance}. Our objective is to maximize the \textbf{sum capacity} of individual users, which is equal to minimize $\displaystyle\sum_{k} MSE_{k}$. However, our cooperation scheme actually leads to the solution of maximizing total capacity, that is minimize $MSE$. Please note that we are not claiming cooperations imply worse performance. It's just this particular cooperation scheme doesn't work. 
+\subsection{System Model}
 
 \begin{figure}[h]
     \centering
@@ -39,12 +43,16 @@
 
 \newpage
 
-
-1. Optimization Problem
+\subsection{Optimization Problem}
 \begin{align*}
 \min_{\textbf{v}_{k} ,\textbf{g}_{k}} \displaystyle\sum_{k} MSE^{(c)}_{k}+MSE^{(p)}_{k}
 \end{align*}
 
+\begin{align*}
+\text{subject to}  \ 	\|	\textbf{v}^{(c)}_{k}	\|^{2}	+\|	\textbf{v}^{(p)}_{k}\|^{2}= P; \| \textbf{g}_{k}	\|^{2} = P
+\end{align*}
+
+where
 \begin{align*}
 MSE^{(c)}_{k} = \mathrm{E}	[	(	x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k}	)(x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k})^{H}	]
 \end{align*}
@@ -57,8 +65,7 @@ MSE^{(p)}_{k} = \mathrm{E}	[	(	x^{(p)}_{k}-\textbf{g}^{H(p)}_{k}	\textbf{y}_{k}	
 
 
 
-
-2. The received signal vector at k-th receiver
+\subsection{The received signal vector at k-th receiver}
 \begin{align*}
 \textbf{y}_{k} &= \textbf{H}_{kk}
 			(\textbf{v}^{(c)}_{k}x
@@ -67,7 +74,7 @@ MSE^{(p)}_{k} = \mathrm{E}	[	(	x^{(p)}_{k}-\textbf{g}^{H(p)}_{k}	\textbf{y}_{k}	
 			+\textbf{n}_{k}
 \end{align*}
 
-3. SINR Derivation
+\subsection{SINR Derivation}
 \begin{align*}
 s^{(c)}_{k} = \textbf{g}^{H(c)}_{k}
 		(\displaystyle\sum_{i}
@@ -135,13 +142,14 @@ n^{(p)}_{k} = \textbf{g}^{H(p)}_{k}
 	}
 \end{align*}
 
-4. Max-SINR Algorithm[Gomadam,2011]
-\begin{align*}
-Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
-\end{align*}
+\subsection{Max-SINR Algorithm[Gomadam, 2011]}
+For Max-SINR algorithm, we assume \textbf{all channel state information(CSI) is available} to each user. In this method, the solution for each transceivers  are simply Wiener filters. In other words, solving it by Wiener-Hopf equation: $R^{-1}p$ [Adaptive Filter Theory, Simon Haykin]
+
+\subsubsection{Forward\ Training (fix $\textbf{v}^{(c)}_{k}$, $\textbf{v}^{(p)}_{k}$, $\forall k$)}
+
 
 \begin{align*}
-\textbf{g}^{(c)}_{k} = 
+\textbf{g}^{*(c)}_{k} = 
 &\bigg[
 \textbf{H}_{kk}	\textbf{v}^{(c)}_{k}	\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
 +\textbf{H}_{kk}	\textbf{v}^{(p)}_{k}	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk}	\\
@@ -157,7 +165,7 @@ Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
 \end{align*}
 
 \begin{align*}
-\textbf{g}^{(p)}_{k} = 	
+\textbf{g}^{*(p)}_{k} = 	
 &\bigg[
 \textbf{H}_{kk}	\textbf{v}^{(c)}_{k}	\textbf{v}^{H(c)}_{k}	\textbf{H}^{H}_{kk}
 +\textbf{H}_{kk}	\textbf{v}^{(p)}_{k}	\textbf{v}^{H(p)}_{k}	\textbf{H}^{H}_{kk}	\\
@@ -172,21 +180,19 @@ Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
 \bigg]^{-1}	 (\textbf{H}_{kk} 	\textbf{v}^{(p)}_{k})
 \end{align*}
 
+
+\subsubsection{Backward\ Training (fix\  $\textbf{g}^{(c)}_{k}$, $\textbf{g}^{(p)}_{k}$, $\forall k$)}
+
+
 \begin{align*}
-Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
+\textbf{Z}_{ab}=\textbf{H}^{H}_{ba} 
 \end{align*}
 
-\begin{align*}
-\textbf{Z}_{ab}=\textbf{H}^{H}_{ba} [Gomadam, 2011]
-\end{align*}
+\paragraph{without cooperation}
 
 
 \begin{align*}
-without \ cooperation
-\end{align*}
-
-\begin{align*}
-\textbf{v}^{(c)}_{k} = 
+\textbf{v}^{*(c)}_{k} = 
 &\bigg[
 \textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
 +\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
@@ -206,12 +212,12 @@ without \ cooperation
 
 
 
-\begin{align*}
-with \ cooperation
-\end{align*}
+
+\paragraph{with cooperation}
+
 
 \begin{align*}
-\textbf{V}^{(c)} =  		
+\textbf{V}^{*(c)} =  		
 &\left\{ 
 \textbf{[Z]}	\textbf{g}^{(c)}	\textbf{g}^{H(c)}		\textbf{[Z]}^{H}
 +\textbf{[Z]}
@@ -227,7 +233,7 @@ with \ cooperation
 \end{align*}
 
 \begin{align*}
-\textbf{v}^{(p)}_{k} =	
+\textbf{v}^{*(p)}_{k} =	
  &\bigg[
 \textbf{Z}_{kk}	\textbf{g}^{(c)}_{k}	\textbf{g}^{H(c)}_{k}	\textbf{Z}^{H}_{kk}
 +\textbf{Z}_{kk}	\textbf{g}^{(p)}_{k}	\textbf{g}^{H(p)}_{k}	\textbf{Z}^{H}_{kk}	\\
@@ -242,11 +248,12 @@ with \ cooperation
 \bigg]^{-1}	 (\textbf{Z}_{kk}  \textbf{g}^{(p)}_{k})
 \end{align*}
 
-5. Bi-Directional Training with LMS Algorithm[Shi,2014]
+\subsection{Bi-Directional Training with LS Algorithm[Shi, 2014]}
+For Bi-Directional Training, we assume \textbf{all channel state information(CSI) is not available} to each user. In this case, we could either adopt Least Mean Square Method(LMS) or Least Square Method(LS) to carry out the solution[Adaptive Filter Theory, Simon Haykin]. \textbf{There is actually another interesting finding here}. We all have seen the monotonically decreasing diagram of MSE when designing/studying filters with both methods. We can also show that when the filter converges(achieve minimum MSE), it also maximizes Signal to Interference plus Noise Ratio(SINR). \textbf{However, how does the SINR behave before it converges?} For LS, it is monotonically  decreasing just as MSE diagram, but for LMS, it is \textbf{not!} Therefore, LMS isn't applicable for our application. We need SINR increases after each iteration.
 
-\begin{align*}
-Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
-\end{align*}
+
+\subsubsection{Forward\ Training (fix\  $\textbf{v}^{(c)}_{k}$, $\textbf{v}^{(p)}_{k}$, $\forall k)$}
+
 
 \begin{align*}
 \textbf{g}^{(c)}_{k}(n+1)= \textbf{g}^{(c)}_{k}(n)+ \mu \textbf y_k(n) [x(n)- \textbf{g}^{H(c)}_{k}(n) \textbf y_k(n)]^*
@@ -256,9 +263,10 @@ Forward\ Training (fix\  \textbf{v}^{(c)}_{k}, \textbf{v}^{(p)}_{k}, \forall k)
 \textbf{g}^{(p)}_{k}(n+1)= \textbf{g}^{(p)}_{k}(n)+ \mu \textbf y_k(n) [x_k^{(p)}(n)- \textbf{g}^{H(p)}_{k}(n) \textbf y_k(n)]^*
 \end{align*}
 
-\begin{align*}
-Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)(without\ cooperation)
-\end{align*}
+
+\subsubsection{Backward\ Training (fix\  $\textbf{g}^{(c)}_{k}$, $\textbf{g}^{(p)}_{k}$, $\forall k$)}
+\paragraph{without cooperation}
+
 
 \begin{align*}
 \textbf{v}^{(c)}_{k}(n+1)= \textbf{v}^{(c)}_{k}(n)+ \mu \textbf y_k(n) [x(n)- \textbf{v}^{H(c)}_{k}(n) \textbf y_k(n)]^*
@@ -268,9 +276,9 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 \textbf{v}^{(p)}_{k}(n+1)= \textbf{v}^{(p)}_{k}(n)+ \mu \textbf y_k(n) [x_k^{(p)}(n)- \textbf{v}^{H(p)}_{k}(n) \textbf y_k(n)]^*
 \end{align*}
 
-\begin{align*}
-Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)(with\ cooperation)
-\end{align*}
+
+\paragraph{with cooperation}
+
 
 \begin{align*}
 \textbf{V}^{(c)}(n+1)= \textbf{V}^{(c)}(n)+ \mu \textbf Y(n) [x(n)- \textbf{V}^{H(c)}(n) \textbf Y(n)	]^*
@@ -280,9 +288,7 @@ Backward\ Training (fix\  \textbf{g}^{(c)}_{k}, \textbf{g}^{(p)}_{k}, \forall k)
 \textbf{v}^{(p)}_{k}(n+1)= \textbf{v}^{(p)}_{k}(n)+ \mu \textbf y_k(n) [x_k^{(p)}(n)- \textbf{v}^{H(p)}_{k}(n) \textbf y_k(n)]^*
 \end{align*}
 
-
-6. Special Case(2 Users,  MIMO Channel, Only Common Messages)
-
+\subsection{Special Case(2 Users,  MIMO Channel, Only Common Messages)}
 \begin{align*}
 \textbf{y}_{k} &=	\displaystyle\sum_{i=1}^{2}\textbf{H}_{ki}\textbf{v}^{(c)}_{i}x	+	\textbf{n}_{k}
 \end{align*}
@@ -338,7 +344,7 @@ MSE^{(c)}_{k} &= \mathrm{E}	[	(	x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k}	)(x-\text
 
 \newpage
 
-7. The Other System Model
+\section{System Model 2 : Cooperative Transmitters }
 
  \begin{figure}[h]
     \centering
@@ -352,18 +358,22 @@ MSE^{(c)}_{k} &= \mathrm{E}	[	(	x-\textbf{g}^{H(c)}_{k}	\textbf{y}_{k}	)(x-\text
     \caption{Backward Channel}
 \end{figure} 
 
-8. Optimization Problem
+\subsection{Optimization Problem}
 \begin{align*}
-\min_{\textbf{v}_{k}^{(j)} ,\textbf{g}_{k}} L =\displaystyle\sum_{k} 	\bigg[w_k	MSE_{k}	+	\lambda_{k}	(\displaystyle\sum_{j}	\|	\textbf{v}^{(j)}_{k}	\|	-P	)	\bigg]
+\min_{\textbf{v}_{k}^{(j)} ,\textbf{g}_{k}} \displaystyle\sum_{k} 	w_k	MSE_{k}	
 \end{align*}
 
-9. The received signal vector at k-th receiver
+\begin{align*}
+\text{subject to}  \ \displaystyle\sum_{j}	\|	\textbf{v}^{(j)}_{k}	\|^{2} = P; \| \textbf{g}_{k}	\|^{2} = P
+\end{align*}
+
+\subsection{The received signal vector at k-th receiver}
 \begin{align*}
 \textbf{y}_{k}  = \displaystyle\sum_{i}		\bigg[	\textbf{H}_{ki}	\displaystyle\sum_{j}	(\textbf{v}^{(j)}_{i}	x_j)		\bigg]	+\textbf{n}_{k}
 \end{align*}
 
 
-10. SINR Derivation
+\subsection{SINR Derivation}
 \begin{align*}
 s_{k} = \textbf{g}^{H}_{k}
 		(\displaystyle\sum_{i}
@@ -399,11 +409,22 @@ n_{k} = \textbf{g}^{H}_{k}
 	}
 \end{align*}
 
+\subsection{Forward Direction}
+The solution is simply $R^{-1}p$.
 
 
+\begin{align*}
+\textbf{g}^*_{k} 	&= \operatornamewithlimits{argmin}_{\textbf{g}_{k}}	(\displaystyle\sum_{k} 	\bigg[	MSE_{k}	+	\lambda_{i}	(\displaystyle\sum_{j}	\|	\textbf{v}^{(j)}_{i}	\|	-P	)	\bigg])	\\
+			&= \bigg[	\displaystyle\sum_{j}
+				\big[	(\displaystyle\sum_{i}\textbf{H}_{ki}\textbf{v}^{(j)}_{i})
+			      (\displaystyle\sum_{i}\textbf{v}^{H(j)}_{i}\textbf{H}^{H}_{ki})	\big]	 +\sigma^2	\textbf{I}
+			      \bigg]^{-1}	(\displaystyle\sum_{i}	\textbf{H}_{ki}	\textbf{v}^{(k)}_{i})		      
+\end{align*}
 
-11. Solutions
 
+\subsection{Backward Direction: Iterative Method which Doesn't Work}
+
+In this method, we found a solution for each $\textbf{v}_{k}^{(j)}$ depending on some $\textbf{v}_{x}^{(j)}$, where k $\neq$ x. For example, $\textbf{v}_{1}^{(1)}$ depends on $\textbf{v}_{2}^{(1)}$. Then, we try to solve the optimization problem by iterating between $\textbf{v}_{k}^{(j)}$ and $\textbf{v}_{x}^{(j)}$, and hope it will work. However, our numerical experiment shows that it will not converge for some channels.
 \begin{align*}
 MSE_{k} &= \mathrm{E}	[	(	x_k-\textbf{g}^{H}_{k}	\textbf{y}_{k}	)(x_k-\textbf{g}^{H}_{k}	\textbf{y}_{k})^{H}	] \\
 		       & = \mathrm{E}[x_k^{2}]	 - \mathrm{E}[x_k	\textbf{y}_{k}^{H} \textbf{g}_{k}]	
@@ -417,13 +438,7 @@ MSE_{k} &= \mathrm{E}	[	(	x_k-\textbf{g}^{H}_{k}	\textbf{y}_{k}	)(x_k-\textbf{g}
 				+\sigma^2		\textbf{g}^{H}_{k}	 \textbf{g}_{k}
 \end{align*}
 
-\begin{align*}
-\textbf{g}^*_{k} 	&= \operatornamewithlimits{argmin}_{\textbf{g}_{k}}	(\displaystyle\sum_{k} 	\bigg[	MSE_{k}	+	\lambda_{i}	(\displaystyle\sum_{j}	\|	\textbf{v}^{(j)}_{i}	\|	-P	)	\bigg])	\\
-			&= \bigg[	\displaystyle\sum_{j}
-				\big[	(\displaystyle\sum_{i}\textbf{H}_{ki}\textbf{v}^{(j)}_{i})
-			      (\displaystyle\sum_{i}\textbf{v}^{H(j)}_{i}\textbf{H}^{H}_{ki})	\big]	 +\sigma^2	\textbf{I}
-			      \bigg]^{-1}	(\displaystyle\sum_{i}	\textbf{H}_{ki}	\textbf{v}^{(k)}_{i})		      
-\end{align*}
+
 
 \begin{align*}
 \textbf{v}^{*(1)}_{1}  &= \operatornamewithlimits{argmin}_{\textbf{v}^{(1)}_{1}}	(\displaystyle\sum_{k=1,2} 	\bigg[	MSE_{k}	+	\lambda_{k}	(\displaystyle\sum_{j=1,2}	\|	\textbf{v}^{(j)}_{k}	\|	-P	)	\bigg])	\\
@@ -534,7 +549,88 @@ MSE_{k} &= \mathrm{E}	[	(	x_k-\textbf{g}^{H}_{k}	\textbf{y}_{k}	)(x_k-\textbf{g}
 
 
 
-To be continued...
+\subsection{Backward Direction: Duality Method}
+For the duality method, if the optimization problem is convex, then the optimal solution is guaranteed. If it is not, there will exist a \textbf{duality gap} which will not give the optimal solution[Convex Optimization, Boyd]. 
+\subsubsection{Primal Problem}
+
+\begin{align*}
+\min_{\textbf{v}_{k}^{(j)}}\
+L =\displaystyle\sum_{k} 	\bigg[w_k	MSE_{k}	+	\lambda_{k}	(\displaystyle\sum_{j}	\|	\textbf{v}^{(j)}_{k}	\|	-P	)	\bigg]
+\end{align*}
+
+We get 
+\begin{align*}
+\textbf{v}^{*H} = \textbf{k}[\textbf{A}+\pmb{\lambda}]^{-1}
+\end{align*}
+where \textbf{k} is a constant row vector with channel information, \textbf{A} is a constant matrix with channel information, and $\pmb{\lambda}$ is a diagonal matrix with each $\pmb{\lambda}_{ii}$ to be some $\lambda_{k}$ 
+
+
+
+
+
+\subsubsection{Dual Problem}
+
+\begin{align*}
+\max_{	\pmb{\lambda}	}	G( \textbf{v}^{*}, \pmb{\lambda} ) \ = \max_{	\pmb{\lambda}	}\ (w1+w2+w3) - \textbf{v}^{*H}\textbf{k}^{H} - P(\lambda_{1}+\lambda_{2}+\lambda_{3})
+\end{align*}
+
+We could actually find the \textbf{analytic solution} for $\pmb{\lambda}$. However, for 3 users case, the process includes finding the inverse of an 6x6 symbolic matrix  which is \textbf{solvable} but \textbf{complicated}, let alone cases above 3 users. Thus, we choose to solve the dual problem with \textbf{numerical method}. By the optimization theory, dual problems are \textbf{always} convex. Therefore, we could get the optimal $\pmb{\lambda}$ simply with gradient algorithm. The gradient is shown below.
+
+\begin{align*}
+\frac{\partial G( \textbf{v}^{*}, \pmb{\lambda} )}{\partial \lambda_{k}} = 
+-\Tr[
+-P \| \textbf{k}	\|^{2}
+(A+\lambda_k\textbf{I})^{-T}(A+\lambda_k\textbf{I})^{-T}
+]
+\end{align*}
+
+The partial derivatives of each $\lambda_{k}$ are mutually independent, and have the same formula. This implies that it's easy to generalize the result for more users.
+
+
+\newpage
+
+\section{System Model 3 : Augmented Receivers}
+In this model, we make each receivers(mobile station) possess the ability to assist channel estimation in backward direction. Since it is rather easy to add a filter to receivers, if this method does improve the capacity, it will be extremely fascinating. We solve each transceivers with Wiener-Hopf equation: $R^{-1}p$.
+
+ \begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{forward_channel_3}}
+    \caption{Forward Channel}
+\end{figure} 
+
+\begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{backward_channel_3}}
+    \caption{Backward Channel}
+\end{figure} 
+
+\subsection{Optimization Problem}
+\begin{align*}
+\min_{\textbf{v}_{k}^{(j)} ,\textbf{g}_{k}} \displaystyle\sum_{k} 	w_k	MSE_{k}	
+\end{align*}
+
+\begin{align*}
+\text{subject to}  \ \displaystyle\sum_{j}	\|	\textbf{v}^{(j)}_{k}	\|^{2} = P; \| \textbf{g}_{k}	\|^{2} = P
+\end{align*}
+
+\subsection{Numerical Results}
+This is a 3 users, and 2X2 MIMO interference channel, with SNR equals to 20dB. The results are averaged over 1000 complex gaussian channels. X-axis represents the number of iterations: start from backward direction and end in forward direction. Y-axis represents the sum capacity of three users. The first thing we can tell is the \textbf{augmented one} is a lot worse than the \textbf{simple one}(Only one filter at each transceivers. For example, for 2 users case, only have $v^{(1)}_1$,$v^{(2)}_2$,$g^{(1)}_1$,$g^{(2)}_2$ ). \textbf{This is because transmitters distribute all messages to all users.} In the experiment, transmitter 1 sends 2 bits of message 1 to user 1, 2, and 3. However user 2 and 3 simply drop message 1 off(they don't need it). Thus, the sum capacity of augmented receivers only have 1/3 of capacity compared with the simple one.
+
+ \begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{Simple_Receivers}}
+    \caption{Simple Receivers}
+\end{figure} 
+
+\begin{figure}[h]
+    \centering
+    \centerline{\includegraphics[width=110mm]{Augmented_Receivers}}
+    \caption{Augmented Receivers}
+\end{figure} 
+
+
+
+
 
 \newpage
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 JAN 2016 09:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 FEB 2016 00:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -187,18 +187,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (./Bitraining.aux)
 \openout1 = `Bitraining.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -291,12 +291,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 22.
+LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -309,7 +309,7 @@ Package epstopdf Info: Source file: <forward_channel.eps>
 (epstopdf)                    size: 9296 bytes
 (epstopdf)             Command: <repstopdf --outfile=forward_channel-eps-conver
 ted-to.pdf forward_channel.eps>
-(epstopdf)             \includegraphics on input line 30.
+(epstopdf)             \includegraphics on input line 34.
 Package epstopdf Info: Output file is already uptodate.
 
 <forward_channel-eps-converted-to.pdf, id=1, 518.93875pt x 220.825pt>
@@ -317,7 +317,7 @@ File: forward_channel-eps-converted-to.pdf Graphic file (type pdf)
 
 <use forward_channel-eps-converted-to.pdf>
 Package pdftex.def Info: forward_channel-eps-converted-to.pdf used on input lin
-e 30.
+e 34.
 (pdftex.def)             Requested size: 312.9803pt x 133.19012pt.
 Package epstopdf Info: Source file: <backward_channel.eps>
 (epstopdf)                    date: 2015-11-19 20:25:23
@@ -327,7 +327,7 @@ Package epstopdf Info: Source file: <backward_channel.eps>
 (epstopdf)                    size: 11148 bytes
 (epstopdf)             Command: <repstopdf --outfile=backward_channel-eps-conve
 rted-to.pdf backward_channel.eps>
-(epstopdf)             \includegraphics on input line 36.
+(epstopdf)             \includegraphics on input line 40.
 Package epstopdf Info: Output file is already uptodate.
 
 <backward_channel-eps-converted-to.pdf, id=2, 507.8975pt x 220.825pt>
@@ -335,28 +335,38 @@ File: backward_channel-eps-converted-to.pdf Graphic file (type pdf)
 
 <use backward_channel-eps-converted-to.pdf>
 Package pdftex.def Info: backward_channel-eps-converted-to.pdf used on input li
-ne 36.
+ne 40.
 (pdftex.def)             Requested size: 312.9803pt x 136.08118pt.
- [1
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./forwa
-rd_channel-eps-converted-to.pdf> <./backward_channel-eps-converted-to.pdf>] [2]
- [3] [4]
-Overfull \hbox (65.06293pt too wide) in paragraph at lines 300--300
+rd_channel-eps-converted-to.pdf>] [2 <./backward_channel-eps-converted-to.pdf>]
+ [3]
+Overfull \hbox (3.37724pt too wide) in paragraph at lines 252--253
+\OT1/cmr/bx/n/10.95 avail-able \OT1/cmr/m/n/10.95 to each user. In this case, w
+e could ei-ther adopt Least Mean Square Method(LMS)
+ []
+
+[4]
+Overfull \hbox (65.06293pt too wide) in paragraph at lines 306--306
 [] 
  []
 
 
-Overfull \hbox (51.77742pt too wide) in paragraph at lines 313--313
+Overfull \hbox (51.77742pt too wide) in paragraph at lines 319--319
 [] 
  []
 
 
-Overfull \hbox (51.77742pt too wide) in paragraph at lines 326--326
+Overfull \hbox (51.77742pt too wide) in paragraph at lines 332--332
 [] 
  []
 
-[5]
+[5] [6]
 Package epstopdf Info: Source file: <forward_channel_2.eps>
 (epstopdf)                    date: 2015-11-24 18:51:01
 (epstopdf)                    size: 35563 bytes
@@ -365,14 +375,15 @@ Package epstopdf Info: Source file: <forward_channel_2.eps>
 (epstopdf)                    size: 8803 bytes
 (epstopdf)             Command: <repstopdf --outfile=forward_channel_2-eps-conv
 erted-to.pdf forward_channel_2.eps>
-(epstopdf)             \includegraphics on input line 345.
+(epstopdf)             \includegraphics on input line 351.
 Package epstopdf Info: Output file is already uptodate.
- <forward_channel_2-eps-converted-to.pdf, id=55, 507.8975pt x 220.825pt>
+
+<forward_channel_2-eps-converted-to.pdf, id=59, 507.8975pt x 220.825pt>
 File: forward_channel_2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use forward_channel_2-eps-converted-to.pdf>
 Package pdftex.def Info: forward_channel_2-eps-converted-to.pdf used on input l
-ine 345.
+ine 351.
 (pdftex.def)             Requested size: 312.9803pt x 136.08118pt.
 Package epstopdf Info: Source file: <backward_channel_2.eps>
 (epstopdf)                    date: 2015-11-24 18:53:32
@@ -382,64 +393,143 @@ Package epstopdf Info: Source file: <backward_channel_2.eps>
 (epstopdf)                    size: 10607 bytes
 (epstopdf)             Command: <repstopdf --outfile=backward_channel_2-eps-con
 verted-to.pdf backward_channel_2.eps>
-(epstopdf)             \includegraphics on input line 351.
+(epstopdf)             \includegraphics on input line 357.
 Package epstopdf Info: Output file is already uptodate.
 
-<backward_channel_2-eps-converted-to.pdf, id=56, 489.83pt x 220.825pt>
+<backward_channel_2-eps-converted-to.pdf, id=60, 489.83pt x 220.825pt>
 File: backward_channel_2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use backward_channel_2-eps-converted-to.pdf>
 Package pdftex.def Info: backward_channel_2-eps-converted-to.pdf used on input 
-line 351.
+line 357.
 (pdftex.def)             Requested size: 312.9803pt x 141.10175pt.
- [6 <./forward_channel_2-eps-converted-to.pdf> <./backward_channel_2-eps-conver
+ [7 <./forward_channel_2-eps-converted-to.pdf> <./backward_channel_2-eps-conver
 ted-to.pdf>]
-Overfull \hbox (44.31235pt too wide) in paragraph at lines 418--418
+Overfull \hbox (44.31235pt too wide) in paragraph at lines 439--439
 [] 
  []
 
 
-Overfull \hbox (57.1299pt too wide) in paragraph at lines 451--451
-[] 
- []
-
-
-Overfull \hbox (57.1299pt too wide) in paragraph at lines 481--481
-[] 
- []
-
-[7]
-Overfull \hbox (57.1299pt too wide) in paragraph at lines 507--507
-[] 
- []
-
-
-Overfull \hbox (57.1299pt too wide) in paragraph at lines 532--532
+Overfull \hbox (57.1299pt too wide) in paragraph at lines 466--466
 [] 
  []
 
 [8]
-Overfull \hbox (22.67589pt too wide) in paragraph at lines 559--559
+Overfull \hbox (57.1299pt too wide) in paragraph at lines 496--496
 [] 
  []
 
 
-Overfull \hbox (85.21506pt too wide) in paragraph at lines 563--563
+Overfull \hbox (57.1299pt too wide) in paragraph at lines 522--522
 [] 
  []
 
 
-Overfull \hbox (79.12732pt too wide) in paragraph at lines 567--567
+Overfull \hbox (57.1299pt too wide) in paragraph at lines 547--547
+[] 
+ []
+
+[9] [10] [11]
+Package epstopdf Info: Source file: <forward_channel_3.eps>
+(epstopdf)                    date: 2016-01-14 15:19:58
+(epstopdf)                    size: 36986 bytes
+(epstopdf)             Output file: <forward_channel_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-01-14 15:22:10
+(epstopdf)                    size: 8936 bytes
+(epstopdf)             Command: <repstopdf --outfile=forward_channel_3-eps-conv
+erted-to.pdf forward_channel_3.eps>
+(epstopdf)             \includegraphics on input line 597.
+Package epstopdf Info: Output file is already uptodate.
+
+<forward_channel_3-eps-converted-to.pdf, id=99, 518.93875pt x 220.825pt>
+File: forward_channel_3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use forward_channel_3-eps-converted-to.pdf>
+Package pdftex.def Info: forward_channel_3-eps-converted-to.pdf used on input l
+ine 597.
+(pdftex.def)             Requested size: 312.9803pt x 133.19012pt.
+Package epstopdf Info: Source file: <backward_channel_3.eps>
+(epstopdf)                    date: 2016-01-14 15:19:40
+(epstopdf)                    size: 44694 bytes
+(epstopdf)             Output file: <backward_channel_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-01-14 15:22:13
+(epstopdf)                    size: 10775 bytes
+(epstopdf)             Command: <repstopdf --outfile=backward_channel_3-eps-con
+verted-to.pdf backward_channel_3.eps>
+(epstopdf)             \includegraphics on input line 603.
+Package epstopdf Info: Output file is already uptodate.
+
+<backward_channel_3-eps-converted-to.pdf, id=100, 498.86375pt x 220.825pt>
+File: backward_channel_3-eps-converted-to.pdf Graphic file (type pdf)
+
+<use backward_channel_3-eps-converted-to.pdf>
+Package pdftex.def Info: backward_channel_3-eps-converted-to.pdf used on input 
+line 603.
+(pdftex.def)             Requested size: 312.9803pt x 138.54765pt.
+ [12 <./forward_channel_3-eps-converted-to.pdf> <./backward_channel_3-eps-conve
+rted-to.pdf>]
+Package epstopdf Info: Source file: <Simple_Receivers.eps>
+(epstopdf)                    date: 2016-02-25 00:23:37
+(epstopdf)                    size: 16443 bytes
+(epstopdf)             Output file: <Simple_Receivers-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-02-25 00:26:29
+(epstopdf)                    size: 8694 bytes
+(epstopdf)             Command: <repstopdf --outfile=Simple_Receivers-eps-conve
+rted-to.pdf Simple_Receivers.eps>
+(epstopdf)             \includegraphics on input line 621.
+Package epstopdf Info: Output file is already uptodate.
+
+<Simple_Receivers-eps-converted-to.pdf, id=126, 562.1pt x 421.575pt>
+File: Simple_Receivers-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Simple_Receivers-eps-converted-to.pdf>
+Package pdftex.def Info: Simple_Receivers-eps-converted-to.pdf used on input li
+ne 621.
+(pdftex.def)             Requested size: 312.9803pt x 234.73595pt.
+Package epstopdf Info: Source file: <Augmented_Receivers.eps>
+(epstopdf)                    date: 2016-02-25 00:22:37
+(epstopdf)                    size: 23703 bytes
+(epstopdf)             Output file: <Augmented_Receivers-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-02-25 00:26:30
+(epstopdf)                    size: 9752 bytes
+(epstopdf)             Command: <repstopdf --outfile=Augmented_Receivers-eps-co
+nverted-to.pdf Augmented_Receivers.eps>
+(epstopdf)             \includegraphics on input line 627.
+Package epstopdf Info: Output file is already uptodate.
+
+<Augmented_Receivers-eps-converted-to.pdf, id=127, 562.1pt x 421.575pt>
+File: Augmented_Receivers-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Augmented_Receivers-eps-converted-to.pdf>
+Package pdftex.def Info: Augmented_Receivers-eps-converted-to.pdf used on input
+ line 627.
+(pdftex.def)             Requested size: 312.9803pt x 234.73595pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./Simple_Receivers-eps-converted-to.pdf>]
+Overfull \hbox (22.67589pt too wide) in paragraph at lines 655--655
 [] 
  []
 
 
-Overfull \hbox (39.55565pt too wide) in paragraph at lines 571--571
+Overfull \hbox (85.21506pt too wide) in paragraph at lines 659--659
 [] 
  []
 
 
-Overfull \hbox (36.44337pt too wide) in paragraph at lines 575--575
+Overfull \hbox (79.12732pt too wide) in paragraph at lines 663--663
+[] 
+ []
+
+
+Overfull \hbox (39.55565pt too wide) in paragraph at lines 667--667
+[] 
+ []
+
+[14 <./Augmented_Receivers-eps-converted-to.pdf>]
+Overfull \hbox (36.44337pt too wide) in paragraph at lines 671--671
 [] 
  []
 
@@ -451,13 +541,13 @@ Package epstopdf Info: Source file: <01.eps>
 (epstopdf)                    size: 21817 bytes
 (epstopdf)             Command: <repstopdf --outfile=01-eps-converted-to.pdf 01
 .eps>
-(epstopdf)             \includegraphics on input line 585.
+(epstopdf)             \includegraphics on input line 681.
 Package epstopdf Info: Output file is already uptodate.
-<01-eps-converted-to.pdf, id=89, 807.015pt x 584.1825pt>
+<01-eps-converted-to.pdf, id=151, 807.015pt x 584.1825pt>
 File: 01-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 01-eps-converted-to.pdf>
-Package pdftex.def Info: 01-eps-converted-to.pdf used on input line 585.
+Package pdftex.def Info: 01-eps-converted-to.pdf used on input line 681.
 (pdftex.def)             Requested size: 426.79134pt x 308.9467pt.
 Package epstopdf Info: Source file: <1USER_4X4MIMO.eps>
 (epstopdf)                    date: 2015-10-28 01:15:42
@@ -467,15 +557,15 @@ Package epstopdf Info: Source file: <1USER_4X4MIMO.eps>
 (epstopdf)                    size: 412131 bytes
 (epstopdf)             Command: <repstopdf --outfile=1USER_4X4MIMO-eps-converte
 d-to.pdf 1USER_4X4MIMO.eps>
-(epstopdf)             \includegraphics on input line 591.
+(epstopdf)             \includegraphics on input line 687.
 Package epstopdf Info: Output file is already uptodate.
 
-<1USER_4X4MIMO-eps-converted-to.pdf, id=90, 1445.4pt x 729.72626pt>
+<1USER_4X4MIMO-eps-converted-to.pdf, id=152, 1445.4pt x 729.72626pt>
 File: 1USER_4X4MIMO-eps-converted-to.pdf Graphic file (type pdf)
 
 <use 1USER_4X4MIMO-eps-converted-to.pdf>
 Package pdftex.def Info: 1USER_4X4MIMO-eps-converted-to.pdf used on input line 
-591.
+687.
 (pdftex.def)             Requested size: 625.96062pt x 316.02539pt.
 Package epstopdf Info: Source file: <LMS1.eps>
 (epstopdf)                    date: 2015-11-04 15:14:18
@@ -485,14 +575,14 @@ Package epstopdf Info: Source file: <LMS1.eps>
 (epstopdf)                    size: 12903 bytes
 (epstopdf)             Command: <repstopdf --outfile=LMS1-eps-converted-to.pdf 
 LMS1.eps>
-(epstopdf)             \includegraphics on input line 597.
+(epstopdf)             \includegraphics on input line 693.
 Package epstopdf Info: Output file is already uptodate.
 
-<LMS1-eps-converted-to.pdf, id=91, 562.1pt x 421.575pt>
+<LMS1-eps-converted-to.pdf, id=153, 562.1pt x 421.575pt>
 File: LMS1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use LMS1-eps-converted-to.pdf>
-Package pdftex.def Info: LMS1-eps-converted-to.pdf used on input line 597.
+Package pdftex.def Info: LMS1-eps-converted-to.pdf used on input line 693.
 (pdftex.def)             Requested size: 625.96062pt x 469.49762pt.
 Package epstopdf Info: Source file: <LMS2.eps>
 (epstopdf)                    date: 2015-11-04 15:17:26
@@ -502,14 +592,14 @@ Package epstopdf Info: Source file: <LMS2.eps>
 (epstopdf)                    size: 12566 bytes
 (epstopdf)             Command: <repstopdf --outfile=LMS2-eps-converted-to.pdf 
 LMS2.eps>
-(epstopdf)             \includegraphics on input line 603.
+(epstopdf)             \includegraphics on input line 699.
 Package epstopdf Info: Output file is already uptodate.
 
-<LMS2-eps-converted-to.pdf, id=92, 562.1pt x 421.575pt>
+<LMS2-eps-converted-to.pdf, id=154, 562.1pt x 421.575pt>
 File: LMS2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use LMS2-eps-converted-to.pdf>
-Package pdftex.def Info: LMS2-eps-converted-to.pdf used on input line 603.
+Package pdftex.def Info: LMS2-eps-converted-to.pdf used on input line 699.
 (pdftex.def)             Requested size: 625.96062pt x 469.49762pt.
 Package epstopdf Info: Source file: <LMS3.eps>
 (epstopdf)                    date: 2015-11-04 15:23:33
@@ -519,18 +609,18 @@ Package epstopdf Info: Source file: <LMS3.eps>
 (epstopdf)                    size: 12825 bytes
 (epstopdf)             Command: <repstopdf --outfile=LMS3-eps-converted-to.pdf 
 LMS3.eps>
-(epstopdf)             \includegraphics on input line 609.
+(epstopdf)             \includegraphics on input line 705.
 Package epstopdf Info: Output file is already uptodate.
 
-<LMS3-eps-converted-to.pdf, id=93, 693.59125pt x 686.565pt>
+<LMS3-eps-converted-to.pdf, id=155, 693.59125pt x 686.565pt>
 File: LMS3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use LMS3-eps-converted-to.pdf>
-Package pdftex.def Info: LMS3-eps-converted-to.pdf used on input line 609.
+Package pdftex.def Info: LMS3-eps-converted-to.pdf used on input line 705.
 (pdftex.def)             Requested size: 625.96062pt x 619.64183pt.
 
 
-LaTeX Warning: Float too large for page by 88.89444pt on input line 611.
+LaTeX Warning: Float too large for page by 88.89444pt on input line 707.
 
 Package epstopdf Info: Source file: <LMS4.eps>
 (epstopdf)                    date: 2015-11-04 15:25:44
@@ -540,17 +630,17 @@ Package epstopdf Info: Source file: <LMS4.eps>
 (epstopdf)                    size: 12718 bytes
 (epstopdf)             Command: <repstopdf --outfile=LMS4-eps-converted-to.pdf 
 LMS4.eps>
-(epstopdf)             \includegraphics on input line 615.
+(epstopdf)             \includegraphics on input line 711.
 Package epstopdf Info: Output file is already uptodate.
-<LMS4-eps-converted-to.pdf, id=94, 693.59125pt x 686.565pt>
+<LMS4-eps-converted-to.pdf, id=156, 693.59125pt x 686.565pt>
 File: LMS4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use LMS4-eps-converted-to.pdf>
-Package pdftex.def Info: LMS4-eps-converted-to.pdf used on input line 615.
+Package pdftex.def Info: LMS4-eps-converted-to.pdf used on input line 711.
 (pdftex.def)             Requested size: 625.96062pt x 619.64183pt.
 
 
-LaTeX Warning: Float too large for page by 88.89444pt on input line 617.
+LaTeX Warning: Float too large for page by 88.89444pt on input line 713.
 
 Package epstopdf Info: Source file: <LMS5.eps>
 (epstopdf)                    date: 2015-11-05 14:12:10
@@ -560,13 +650,13 @@ Package epstopdf Info: Source file: <LMS5.eps>
 (epstopdf)                    size: 11475 bytes
 (epstopdf)             Command: <repstopdf --outfile=LMS5-eps-converted-to.pdf 
 LMS5.eps>
-(epstopdf)             \includegraphics on input line 621.
+(epstopdf)             \includegraphics on input line 717.
 Package epstopdf Info: Output file is already uptodate.
-<LMS5-eps-converted-to.pdf, id=95, 562.1pt x 421.575pt>
+<LMS5-eps-converted-to.pdf, id=157, 562.1pt x 421.575pt>
 File: LMS5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use LMS5-eps-converted-to.pdf>
-Package pdftex.def Info: LMS5-eps-converted-to.pdf used on input line 621.
+Package pdftex.def Info: LMS5-eps-converted-to.pdf used on input line 717.
 (pdftex.def)             Requested size: 625.96062pt x 469.49762pt.
 Package epstopdf Info: Source file: <LS1.eps>
 (epstopdf)                    date: 2015-11-04 15:29:38
@@ -576,14 +666,14 @@ Package epstopdf Info: Source file: <LS1.eps>
 (epstopdf)                    size: 12720 bytes
 (epstopdf)             Command: <repstopdf --outfile=LS1-eps-converted-to.pdf L
 S1.eps>
-(epstopdf)             \includegraphics on input line 627.
+(epstopdf)             \includegraphics on input line 723.
 Package epstopdf Info: Output file is already uptodate.
 
-<LS1-eps-converted-to.pdf, id=96, 723.70375pt x 533.995pt>
+<LS1-eps-converted-to.pdf, id=158, 723.70375pt x 533.995pt>
 File: LS1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use LS1-eps-converted-to.pdf>
-Package pdftex.def Info: LS1-eps-converted-to.pdf used on input line 627.
+Package pdftex.def Info: LS1-eps-converted-to.pdf used on input line 723.
 (pdftex.def)             Requested size: 625.96062pt x 461.88303pt.
 Package epstopdf Info: Source file: <only_private.eps>
 (epstopdf)                    date: 2015-11-10 02:42:15
@@ -593,15 +683,15 @@ Package epstopdf Info: Source file: <only_private.eps>
 (epstopdf)                    size: 10742 bytes
 (epstopdf)             Command: <repstopdf --outfile=only_private-eps-converted
 -to.pdf only_private.eps>
-(epstopdf)             \includegraphics on input line 633.
+(epstopdf)             \includegraphics on input line 729.
 Package epstopdf Info: Output file is already uptodate.
 
-<only_private-eps-converted-to.pdf, id=97, 604.2575pt x 442.65375pt>
+<only_private-eps-converted-to.pdf, id=159, 604.2575pt x 442.65375pt>
 File: only_private-eps-converted-to.pdf Graphic file (type pdf)
 
 <use only_private-eps-converted-to.pdf>
-Package pdftex.def Info: only_private-eps-converted-to.pdf used on input line 6
-33.
+Package pdftex.def Info: only_private-eps-converted-to.pdf used on input line 7
+29.
 (pdftex.def)             Requested size: 625.96062pt x 458.55237pt.
 Package epstopdf Info: Source file: <no_coop.eps>
 (epstopdf)                    date: 2015-11-10 02:42:01
@@ -611,14 +701,14 @@ Package epstopdf Info: Source file: <no_coop.eps>
 (epstopdf)                    size: 10874 bytes
 (epstopdf)             Command: <repstopdf --outfile=no_coop-eps-converted-to.p
 df no_coop.eps>
-(epstopdf)             \includegraphics on input line 639.
+(epstopdf)             \includegraphics on input line 735.
 Package epstopdf Info: Output file is already uptodate.
 
-<no_coop-eps-converted-to.pdf, id=98, 562.1pt x 421.575pt>
+<no_coop-eps-converted-to.pdf, id=160, 562.1pt x 421.575pt>
 File: no_coop-eps-converted-to.pdf Graphic file (type pdf)
 
 <use no_coop-eps-converted-to.pdf>
-Package pdftex.def Info: no_coop-eps-converted-to.pdf used on input line 639.
+Package pdftex.def Info: no_coop-eps-converted-to.pdf used on input line 735.
 (pdftex.def)             Requested size: 625.96062pt x 469.49762pt.
 Package epstopdf Info: Source file: <coop.eps>
 (epstopdf)                    date: 2015-11-10 02:42:32
@@ -628,47 +718,48 @@ Package epstopdf Info: Source file: <coop.eps>
 (epstopdf)                    size: 10871 bytes
 (epstopdf)             Command: <repstopdf --outfile=coop-eps-converted-to.pdf 
 coop.eps>
-(epstopdf)             \includegraphics on input line 645.
+(epstopdf)             \includegraphics on input line 741.
 Package epstopdf Info: Output file is already uptodate.
 
-<coop-eps-converted-to.pdf, id=99, 562.1pt x 421.575pt>
+<coop-eps-converted-to.pdf, id=161, 562.1pt x 421.575pt>
 File: coop-eps-converted-to.pdf Graphic file (type pdf)
 
 <use coop-eps-converted-to.pdf>
-Package pdftex.def Info: coop-eps-converted-to.pdf used on input line 645.
+Package pdftex.def Info: coop-eps-converted-to.pdf used on input line 741.
 (pdftex.def)             Requested size: 625.96062pt x 469.49762pt.
- [9] [10 <./01-eps-converted-to.pdf>] [11 <./1USER_4X4MIMO-eps-converted-to.pdf
->] [12 <./LMS1-eps-converted-to.pdf>] [13 <./LMS2-eps-converted-to.pdf>] [14 <.
-/LMS3-eps-converted-to.pdf>] [15 <./LMS4-eps-converted-to.pdf>] [16 <./LMS5-eps
--converted-to.pdf>] [17 <./LS1-eps-converted-to.pdf>] [18 <./only_private-eps-c
-onverted-to.pdf>] [19 <./no_coop-eps-converted-to.pdf>] [20 <./coop-eps-convert
-ed-to.pdf>] (./Bitraining.aux) ) 
+ [15 <./01-eps-converted-to.pdf>] [16 <./1USER_4X4MIMO-eps-converted-to.pdf>] [
+17 <./LMS1-eps-converted-to.pdf>] [18 <./LMS2-eps-converted-to.pdf>] [19 <./LMS
+3-eps-converted-to.pdf>] [20 <./LMS4-eps-converted-to.pdf>] [21 <./LMS5-eps-con
+verted-to.pdf>] [22 <./LS1-eps-converted-to.pdf>] [23 <./only_private-eps-conve
+rted-to.pdf>] [24 <./no_coop-eps-converted-to.pdf>] [25 <./coop-eps-converted-t
+o.pdf>] (./Bitraining.aux) ) 
 Here is how much of TeX's memory you used:
- 3481 strings out of 493089
- 50369 string characters out of 6134842
- 130933 words of memory out of 5000000
- 6892 multiletter control sequences out of 15000+600000
- 11061 words of font info for 42 fonts, out of 8000000 for 9000
+ 3508 strings out of 493089
+ 51212 string characters out of 6134842
+ 133913 words of memory out of 5000000
+ 6914 multiletter control sequences out of 15000+600000
+ 11973 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,17n,26p,299b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb>
-Output written on Bitraining.pdf (20 pages, 681112 bytes).
+ 37i,17n,26p,1001b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb>
+Output written on Bitraining.pdf (25 pages, 744498 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 198 compressed objects within 2 object streams
+ 357 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
