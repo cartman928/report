@@ -550,7 +550,20 @@ MSE_{k} &= \mathrm{E}	[	(	x_k-\textbf{g}^{H}_{k}	\textbf{y}_{k}	)(x_k-\textbf{g}
 
 
 \subsection{Backward Direction: Duality Method}
-For the duality method, if the optimization problem is convex, then the optimal solution is guaranteed. If it is not, there will exist a \textbf{duality gap} which will not give the optimal solution[Convex Optimization, Boyd]. 
+For the duality method, if the optimization problem is convex, then the optimal solution is guaranteed. If it is not, there will exist a \textbf{duality gap} which will not give the optimal solution[Convex Optimization, Boyd]. However, our problem is convex. Thus we can get the \textbf{exact/global optimal} solution.
+
+\subsubsection{Convexity Analysis}
+
+We could rewrite our cost function in
+\begin{align*}
+\displaystyle\sum_{k} 	w_k	MSE_{k}	=  (\displaystyle\sum_{k} w_k)-\textbf{kv}-(\textbf{kv})^{H}+\textbf{v}^{H}\textbf{A}\textbf{v}+ \sigma^{2} \textbf{g}^{H} \textbf{g}
+\end{align*}
+
+where \textbf{k} is a constant row vector with channel information, \textbf{A} is a constant matrix with channel information, and $\pmb{\lambda}$ is a diagonal matrix with each $\pmb{\lambda}_{ii}$ to be some $\lambda_{k}$. Since A is a \textbf{positive definite} matrix, the cost function is convex.
+
+
+
+
 \subsubsection{Primal Problem}
 
 \begin{align*}
@@ -560,9 +573,10 @@ L =\displaystyle\sum_{k} 	\bigg[w_k	MSE_{k}	+	\lambda_{k}	(\displaystyle\sum_{j}
 
 We get 
 \begin{align*}
-\textbf{v}^{*H} = \textbf{k}[\textbf{A}+\pmb{\lambda}]^{-1}
+\textbf{v}^{*H} = \textbf{k}[\textbf{A}+\pmb{\lambda}]^{-1}, \forall \lambda_{k} \geq 0
 \end{align*}
-where \textbf{k} is a constant row vector with channel information, \textbf{A} is a constant matrix with channel information, and $\pmb{\lambda}$ is a diagonal matrix with each $\pmb{\lambda}_{ii}$ to be some $\lambda_{k}$ 
+The \textbf{feasible set} of $\lambda_{k}$ is positive number set. The reason could be found in textbook. There's an interesting result of $\lambda_{k}$. This is, if we \textbf{change our constraint from equality to inequality}, the duality method will give the same answer. Although this is not too surprising, it is justified by mathematics.
+
 
 
 
@@ -571,16 +585,16 @@ where \textbf{k} is a constant row vector with channel information, \textbf{A} i
 \subsubsection{Dual Problem}
 
 \begin{align*}
-\max_{	\pmb{\lambda}	}	G( \textbf{v}^{*}, \pmb{\lambda} ) \ = \max_{	\pmb{\lambda}	}\ (w1+w2+w3) - \textbf{v}^{*H}\textbf{k}^{H} - P(\lambda_{1}+\lambda_{2}+\lambda_{3})
+\max_{	\pmb{\lambda} \geq \textbf{0}	}	G( \textbf{v}^{*}, \pmb{\lambda} ) \ = \max_{	\pmb{\lambda}	\geq \textbf{0}}\ (w1+w2+w3) - \textbf{v}^{*H}\textbf{k}^{H} + \sigma^{2} \textbf{g}^{H} \textbf{g} - P(\lambda_{1}+\lambda_{2}+\lambda_{3})
 \end{align*}
 
-We could actually find the \textbf{analytic solution} for $\pmb{\lambda}$. However, for 3 users case, the process includes finding the inverse of an 6x6 symbolic matrix  which is \textbf{solvable} but \textbf{complicated}, let alone cases above 3 users. Thus, we choose to solve the dual problem with \textbf{numerical method}. By the optimization theory, dual problems are \textbf{always} convex. Therefore, we could get the optimal $\pmb{\lambda}$ simply with gradient algorithm. The gradient is shown below.
+We could actually find the \textbf{analytic solution} for $\pmb{\lambda}$. However, for 3 users case, the process includes finding the \textbf{inverse of an 6x6 symbolic matrix}  which is \textbf{solvable} but \textbf{complicated}, let alone cases above 3 users. Thus, we choose to solve the dual problem with \textbf{numerical method}. By the optimization theory, dual problems are \textbf{always} convex. Therefore, we could get the optimal $\pmb{\lambda}$ simply with gradient algorithm. The gradient is shown below.
 
 \begin{align*}
 \frac{\partial G( \textbf{v}^{*}, \pmb{\lambda} )}{\partial \lambda_{k}} = 
--\Tr[
--P \| \textbf{k}	\|^{2}
-(A+\lambda_k\textbf{I})^{-T}(A+\lambda_k\textbf{I})^{-T}
+-P+
+\Tr[
+(A+\lambda_k\textbf{I})^{-T}\textbf{k}^{H}\textbf{k}(A+\lambda_k\textbf{I})^{-T}
 ]
 \end{align*}
 
