@@ -705,9 +705,12 @@ For numerical simulation, we compare the performance of 3 different algorithms/m
 
 
 \newpage
-\subsubsection{Settings}
-The numerical results were carried out with the following setting:
+
+
+\subsubsection{Sum Capacity vs. Iterations}
+\textbf{A. Iteration Count:} Start with backward training. A full cycle of backward then forward training counts as 1 iteration.
 \newline
+\textbf{B. Parameters:}
 \newline
 1. Number of User $k$ = 3
 \newline
@@ -718,9 +721,6 @@ The numerical results were carried out with the following setting:
 4. Results are averaged over 100 random complex gaussian channels.
 \newline
 5. Channel Capacity $C = \log_2 ({1+SINR})$
-
-\subsubsection{Sum Capacity vs. Iterations}
-\textbf{Iteration Count:} Start with backward training. A full cycle of backward then forward training counts as 1 iteration.
 
 
 \begin{figure}[H]
@@ -742,7 +742,20 @@ The numerical results were carried out with the following setting:
 \end{figure} 
 
 \subsubsection{Sum Capacity vs. Noise}
-\textbf{Convergence Criterion:} As we can see from the previous example, filters tend to converge at \textbf{20th iteration}. Thus, we choose 20 iterations for doing this simulation.
+\textbf{A. Convergence Criterion:} As we can see from the previous example, filters tend to converge at \textbf{20th iteration}. Thus, we choose 20 iterations for doing this simulation.
+\newline
+\textbf{B. Parameters:}
+\newline
+1. Number of User $k$ = 3
+\newline
+2. Power Constraint $P$ = 1
+\newline
+3. Noise Variance $n_0$=$\mathbb{E}[\textbf{n}_k^{H}\textbf{n}_k]$ ranges from $10^{-3}$ to $1$
+\newline
+4. Results are averaged over 10 random complex gaussian channels.
+\newline
+5. Channel Capacity $C = \log_2 ({1+SINR})$
+
 
 \newpage
 
