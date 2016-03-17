@@ -559,7 +559,7 @@ MSE_{k} &= \mathrm{E}	[	(	x_k-\textbf{g}^{H}_{k}	\textbf{y}_{k}	)(x_k-\textbf{g}
 
 
 \subsection{Backward Direction: Duality Method}
-For the duality method, if the optimization problem is convex, then the optimal solution is guaranteed. If it is not, there will exist a \textbf{duality gap} which will not give the optimal solution[Convex Optimization, Boyd]. Since our problem is non-convex, getting the optimal solution is possible but not guaranteed. The same problem with single constraint(only contains one $\lambda$) has been solved[Boyd], but not for the cases with multiple constraints.
+For the duality method, if the optimization problem is convex, then the optimal solution is guaranteed. If it is not, there will exist a \textbf{duality gap} which will not give the optimal solution[Convex Optimization, Boyd]. Since our problem is non-convex, getting the optimal solution is possible but not guaranteed. The same problem with single constraint(only contains one $\lambda$) has been solved[Boyd], but not for the cases with multiple constraints. \textbf{However, our numerical result shows that there's no duality gap, which means we actually get the optimal solution!}
 
 \subsubsection{Convexity Analysis}
 
